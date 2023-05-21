@@ -37,27 +37,31 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <div className="input-group" style={{ height: "40px" }}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search product name"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  style={{ height: "100%" }}
-                />
-                <div className="input-group-append">
-                  <span
-                    className="input-group-text"
-                    id="search-icon"
+            {user && (
+              <li className="nav-item">
+                <div className="input-group" style={{ height: "40px" }}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search product name"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     style={{ height: "100%" }}
-                  >
-                    <FaSearch style={{ height: "100%" }} />
-                  </span>
+                  />
+
+                  <div className="input-group-append">
+                    <span
+                      className="input-group-text"
+                      id="search-icon"
+                      style={{ height: "100%" }}
+                    >
+                      <FaSearch style={{ height: "100%" }} />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            )}
+
             {user && (
               <li className="nav-item">
                 <Link
