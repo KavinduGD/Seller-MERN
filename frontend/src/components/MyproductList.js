@@ -13,7 +13,7 @@ const MyProductList = ({ searchTerm }) => {
       try {
         const seller = user.sellerID;
         const response = await axios.get(
-          `http://localhost:4001/products/getProductbySellerId/${seller}`
+          `https://seller-management-admin.onrender.com/products/getProductbySellerId/${seller}`
         );
         setData(response.data);
       } catch (error) {

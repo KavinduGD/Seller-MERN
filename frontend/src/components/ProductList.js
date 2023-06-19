@@ -8,7 +8,9 @@ const ProductList = ({ searchTerm }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:4001/products/all/");
+      const response = await axios.get(
+        "https://seller-management-admin.onrender.com/products/all/"
+      );
       setData(response.data);
     };
     //("http://localhost:8080/products/getProductbySellerId/seller");

@@ -49,7 +49,10 @@ const ProductEdit = () => {
       formData.append("imageUrl", imageUrl);
     }
 
-    await axios.patch(`http://localhost:4001/products/update/${id}`, formData);
+    await axios.patch(
+      `https://seller-management-admin.onrender.com/products/update/${id}`,
+      formData
+    );
     alert("Product updated!");
     console.log("id");
     navigate(`/products/${id}`);

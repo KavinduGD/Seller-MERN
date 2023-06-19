@@ -32,7 +32,7 @@ const AddProductForm = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:4001/products/addProducts/${seller}`,
+        `https://seller-management-admin.onrender.com/products/addProducts/${seller}`,
         formData,
         {
           headers: {

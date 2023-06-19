@@ -11,7 +11,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/products/getProductbyId/${id}`
+        `https://seller-management-admin.onrender.com/products/getProductbyId/${id}`
       );
       setData(response.data);
     };
@@ -20,7 +20,9 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:4001/products/delete/${id}`);
+    await axios.delete(
+      `https://seller-management-admin.onrender.com/products/delete/${id}`
+    );
     alert("Product deleted successfully!");
     navigate(`/`);
     //window.location.href = "/";
