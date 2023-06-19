@@ -19,7 +19,7 @@ const ProductEdit = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/products/getProductbyId/${id}`
+        `https://seller-management-admin.onrender.com/products/getProductbyId/${id}`
       );
       setData(response.data);
       setName(response.data.name);
@@ -99,7 +99,7 @@ const ProductEdit = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
           <label>Image:</label>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt={name} />
 
           <label>Image URL:</label>
           <input
@@ -108,13 +108,14 @@ const ProductEdit = () => {
               setImageUrl(e.target.files[0]);
               const reader = new FileReader();
               reader.onload = (e) => {
-                const reader = new FileReader();
                 setImagePreviewUrl(e.target.result);
               };
               reader.readAsDataURL(e.target.files[0]);
             }}
           />
-          {imagePreviewUrl && <img src={imagePreviewUrl} alt="product-image" />}
+          {imagePreviewUrl && (
+            <img src={imagePreviewUrl} alt="Product Preview" />
+          )}
 
           <button type="submit">Save</button>
           <Link to={`/products/${id}`}>Cancel</Link>
