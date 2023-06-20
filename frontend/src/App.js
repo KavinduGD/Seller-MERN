@@ -23,14 +23,24 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<ProductList searchTerm={searchTerm} />}
+          element={
+            user ? (
+              <ProductList searchTerm={searchTerm} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         ></Route>
+
         <Route
           path="/products/:id"
           element={user ? <ProductDetails /> : <Navigate to="/login" />}
         />
+
         <Route path="/productsform" element={<AddProductForm />} />
+
         <Route path="/edit-product/:id" element={<ProductEdit />} />
+
         <Route
           path="/myProduct"
           element={<MyProductList searchTerm={searchTerm} />}
