@@ -33,7 +33,7 @@ const MyProductList = ({ searchTerm }) => {
   );
 
   return (
-    <div>
+    <div className="bigbox">
       <div className="product-list" style={{ marginBottom: "190px" }}>
         {filteredData.map((item) => (
           <div className="product-list-item" key={item._id}>
