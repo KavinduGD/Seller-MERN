@@ -30,19 +30,16 @@ const ProductList = ({ searchTerm }) => {
       <div className="product-list">
         {filteredData.map((item) => (
           <div className="product-list-item" key={item._id}>
-            {" "}
-            <Link to={`/products/${item._id}`}>
-              <img src={item.imageUrl} alt={item.name} />
-              <div>
-                <h5>{item.name}</h5>
-                <p>
-                  <span className="price">Price: ${item.price}</span>
-                </p>
-                <p>
-                  <span className="quantity">Quantity: {item.quantity}</span>
-                </p>
-              </div>
-            </Link>
+            <img src={item.imageUrl} alt={item.name} />
+            <div>
+              <h5>{item.name}</h5>
+              <p>
+                <span className="price">Price: ${item.price}</span>
+              </p>
+              <p>
+                <span className="quantity">Quantity: {item.quantity}</span>
+              </p>
+            </div>
           </div>
         ))}
       </div>
