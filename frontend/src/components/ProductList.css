@@ -10,7 +10,7 @@
 .product-list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 350px);
   grid-auto-rows: auto;
   gap: 30px;
   justify-content: center;
@@ -21,6 +21,7 @@
   border-radius: 10px;
   overflow: hidden;
   width: 90%;
+  /* height: 380px; */
 }
 
 .product-list-item:hover {
@@ -69,7 +70,7 @@
   .product-list {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 180px);
     gap: 10px;
     grid-auto-rows: auto;
   }
